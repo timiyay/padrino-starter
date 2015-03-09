@@ -1,0 +1,24 @@
+{
+  "name": "your-project",
+  "version": "0.0.0",
+  "authors": [
+    "Timothy Asquith <timothy.asquith@gmail.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "spec",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "*"
+  }
+}

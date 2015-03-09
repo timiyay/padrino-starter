@@ -1,0 +1,52 @@
+source 'https://rubygems.org'
+ruby '2.2.1'
+
+# APP FRAMEWORK & PLUGINS
+gem 'padrino', '0.12.5'
+gem 'slim'
+
+# FRONT-END ASSETS
+gem 'bourbon' # SASS CSS3 mix-ins
+gem 'sass'
+
+# DB & WEB STACK
+gem 'oj' # codec for faster JSON
+gem 'unicorn' # unicorn web app server
+
+# EXTERNAL SERVICES
+
+# DEVELOPMENT AND TESTING TOOLS
+gem 'rake'
+
+group :development do
+  gem 'awesome_print'
+  gem 'foreman'
+end
+
+group :development, :test do
+  gem 'better_errors'
+  gem 'byebug'
+  gem 'dotenv'
+  gem 'faker'
+  gem 'growl'
+  gem 'guard'
+  gem 'guard-bundler'
+  gem 'guard-cucumber'
+  gem 'guard-rspec'
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'sprockets_better_errors'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'cucumber', require: false
+  gem 'factory_girl'
+  gem 'poltergeist'
+  gem 'rack-test', :require => 'rack/test'
+  gem 'rspec'
+  gem 'rspec-mocks'
+  gem 'selenium-webdriver'
+  gem 'vcr'
+  gem 'webmock'
+end

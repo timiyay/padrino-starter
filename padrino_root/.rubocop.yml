@@ -1,0 +1,32 @@
+# inherit_from: .rubocop-todo.yml
+
+AllCops:
+  Exclude:
+    - vendor/**/*
+
+IndentationConsistency:
+  Enabled: true
+
+IndentationWidth:
+  Enabled: true
+
+Tab:
+  Enabled: true
+
+TrailingWhitespace:
+  Enabled: true
+
+ClassLength:
+  Enabled: false
+
+RescueModifier:
+  Enabled: false
+
+Style/IndentationWidth:
+  Enabled: true%
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 20

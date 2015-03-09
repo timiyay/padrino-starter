@@ -1,0 +1,16 @@
+{
+  "name": "your-project",
+  "version": "0.1.0",
+  "author": "Timothy Asquith <tim@redronin.io>",
+  "dependencies": {},
+  "devDependencies": {
+    "babelify": "*",
+    "bower": "*",
+    "browserify": "*",
+    "gulp": "*",
+    "gulp-util": "*",
+    "vinyl-source-stream": "*",
+    "watchify": "*"
+  },
+  "scripts": {}
+}

@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title put your title here
+    = favicon_tag 'images/favicon.png'
+
+    / load Adobe Typekit fonts
+    / script src="//use.typekit.net/YOUR_TYPEKIT_ID.js"
+    / javascript:
+    /   try{Typekit.load();}catch(e){}
+
+    = stylesheet_link_tag 'main'
+
+  body
+    section.section.hero
+      .hero-inner
+        .hero-logo put your logo here
+        /   = image_tag 'logo.png', class: 'hero-logo-image'
+        .hero-headline put your slogan here
+
+    section.section
+      .section-inner
+        p.section-copy Put your blurb here
+
+    footer.footer
+      .footer-inner
+        p.footer-item
+          | put your footer items here
+        p.footer-item
+          | &copy; #{Time.now.year} YOUR COMPANY
+
+    = javascript_include_tag '/javascripts/main'
