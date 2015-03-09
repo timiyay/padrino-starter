@@ -55,5 +55,31 @@ copy_file 'padrino_root/gulpfile.js', 'gulpfile.js'
 copy_file 'padrino_root/app/javascripts/main.js', 'app/javascripts/main.js'
 
 # possibles / optionals
-# - ditch Padrino-based SASS pre-processing, and switch to all
+# - ditch Padrino-based SASS pre-processing, and switch to all Gulp
 
+# Create directories for modular SMCSS-inspired stylesheets
+remove_file 'lib/scss_initializer.rb'
+copy_file 'padrino_root/lib/scss_initializer.rb', 'lib/scss_initializer.rb'
+copy_file 'padrino_root/app/stylesheets/main.scss', 'app/stylesheets/main.scss'
+%w(core components functions pages).each { |path| empty_directory File.join('app/stylesheets/', path) }
+
+copy_file 'padrino_root/app/stylesheets/core/_reset.scss', 'app/stylesheets/core/_reset.scss'
+
+[
+  ['app/stylesheets/core/_grid.scss', '// Import and add your grids.'],
+  ['app/stylesheets/core/_elements.scss', '// Add base styling to your HTML elements, if needed.'],
+  ['app/stylesheets/core/_colors.scss', '// Add SASS variables for your colors.'],
+  ['app/stylesheets/core/_dimensions.scss', '// Add SASS variables for your element sizes, converting from pixels if necessary (i.e. rem(24);)'],
+  ['app/stylesheets/core/_typography.scss', '// Add SASS variables for your font families, sizes, and weights']
+].each { |file_args| create_file(*file_args) }
+
+# Install dependencies from Rubygems, NPM, and Bower
+inside do
+  ruby_version = File.read(File.join(File.dirname(__FILE__), 'padrino_root/.ruby-version')).strip
+  run "~/.rbenv/versions/#{ruby_version}/bin/bundle install"
+  run 'npm install'
+  run 'node_modules/.bin/bower install'
+
+  # do an initial build of template JS
+  run './node_modules/.bin/gulp browserify'
+end

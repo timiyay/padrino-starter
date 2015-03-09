@@ -1,0 +1,17 @@
+// Import SASS libraries from: gems, vendor/bower_components
+@import "bourbon";
+@import "scut/dist/scut";
+
+// Import your functions and mixins here
+
+@import "core/colors";
+@import "core/dimensions";
+@import "core/typography";
+
+@import "core/reset";
+@import "core/elements";
+@import "core/grid";
+
+// Import your components here. Source order matters, but it's ideal to
+// write your styles so that it doesn't actually matter
+// @import "components/section";
