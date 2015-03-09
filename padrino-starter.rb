@@ -11,17 +11,20 @@ remove_file 'Gemfile'
 copy_file 'padrino_root/Gemfile', 'Gemfile'
 
 # copy dotfiles and any other development config
-copy_file 'padrino_root/.editorconfig', '.editorconfig'
+remove_file '.gitignore'
 copy_file 'padrino_root/.gitignore', '.gitignore'
+
+copy_file 'padrino_root/.editorconfig', '.editorconfig'
 copy_file 'padrino_root/.rspec', '.rspec'
 copy_file 'padrino_root/.rubocop.yml', '.rubocop.yml'
 copy_file 'padrino_root/.ruby-version', '.ruby-version'
 copy_file 'padrino_root/Procfile', 'Procfile'
 
-# Padrino app controllers and views
+# Padrino app files, like config, controllers, views, etc
 remove_file 'app/controllers.rb'
 copy_file 'padrino_root/app/controllers.rb', 'app/controllers.rb'
 copy_file 'padrino_root/app/views/index.html.slim', 'app/views/index.html.slim'
+copy_file 'padrino_root/config/unicorn.rb', 'config/unicorn.rb'
 
 # front-end toolchain
 # Bower for dependencies
@@ -43,7 +46,7 @@ copy_file 'padrino_root/app/javascripts/main.js', 'app/javascripts/main.js'
 remove_file 'lib/scss_initializer.rb'
 copy_file 'padrino_root/lib/scss_initializer.rb', 'lib/scss_initializer.rb'
 
-# CSS temaplte
+# CSS template
 copy_file 'padrino_root/app/stylesheets/main.scss', 'app/stylesheets/main.scss'
 
 # CSS folder structure
