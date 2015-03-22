@@ -22,9 +22,11 @@ copy_file 'padrino_root/.ruby-version', '.ruby-version'
 copy_file 'padrino_root/Procfile', 'Procfile'
 
 # Padrino app files, like config, controllers, views, etc
+empty_directory 'app/views/pages'
+empty_directory 'app/views/shared'
 copy_file 'padrino_root/app/controllers/pages_controller.rb', 'app/controllers/pages_controller.rb'
 copy_file 'padrino_root/app/controllers/enquiries_controller.rb', 'app/controllers/enquiries_controller.rb'
-copy_file 'padrino_root/app/views/index.html.slim', 'app/views/index.html.slim'
+copy_file 'padrino_root/app/views/pages/index.html.slim', 'app/views/pages/index.html.slim'
 copy_file 'padrino_root/config/unicorn.rb', 'config/unicorn.rb'
 
 # front-end toolchain
@@ -71,4 +73,5 @@ inside do
 
   # do an initial build of template JS
   run './node_modules/.bin/gulp browserify'
+  run './node_modules/.bin/gulp sass'
 end
