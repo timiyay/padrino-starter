@@ -1,5 +1,5 @@
 {
-  "name": "your-project",
+  "name": "skilltapp-website",
   "version": "0.1.0",
   "author": "Timothy Asquith <tim@redronin.io>",
   "dependencies": {},
@@ -7,10 +7,30 @@
     "babelify": "*",
     "bower": "*",
     "browserify": "*",
+    "browserify-shim": "^3.8.3",
+    "css-sprite": "^0.9.8",
     "gulp": "*",
+    "gulp-concat-css": "^2.1.1",
+    "gulp-if": "^1.2.5",
+    "gulp-load-plugins": "^0.8.1",
+    "gulp-ruby-sass": "^1.0.0-alpha.3",
     "gulp-util": "*",
     "vinyl-source-stream": "*",
     "watchify": "*"
   },
-  "scripts": {}
+  "scripts": {},
+  "browserify": {
+    "transform": [
+      "babelify",
+      "browserify-shim"
+    ]
+  },
+  "browser": {
+    "jquery": "./vendor/bower_components/jquery/dist/jquery.js",
+    "lodash": "./vendor/bower_components/lodash/lodash.js"
+  },
+  "browserify-shim": {
+    "jquery": "jQuery",
+    "lodash": "_"
+  }
 }

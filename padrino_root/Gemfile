@@ -29,10 +29,10 @@ group :development, :test do
   gem 'dotenv'
   gem 'faker'
   gem 'growl'
-  gem 'guard'
-  gem 'guard-bundler'
-  gem 'guard-cucumber'
-  gem 'guard-rspec'
+  gem 'guard', require: false
+  gem 'guard-bundler', require: false
+  gem 'guard-cucumber', require: false
+  gem 'guard-rspec', require: false
   gem 'pry'
   gem 'pry-byebug'
   gem 'sprockets_better_errors'
@@ -47,6 +47,7 @@ group :test do
   gem 'rspec'
   gem 'rspec-mocks'
   gem 'selenium-webdriver'
+  gem 'timecop'
   gem 'vcr'
   gem 'webmock'
 end
